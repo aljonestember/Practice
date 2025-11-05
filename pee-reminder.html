@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PeePal Reminder</title>
+  </head>
+  <body>
+    <h1>💧 PeePal Reminder</h1>
+    <p>Click below to start hourly pee reminders!</p>
+    <button id="start">Start Reminder</button>
+
+    <script>
+      async function requestNotificationPermission() {
+        const permission = await Notification.requestPermission();
+        if (permission !== "granted") {
+          alert("Please allow notifications for reminders!");
+          return false;
+        }
+        return true;
+      }
+
+      document.getElementById("start").addEventListener("click", async () => {
+        if (await requestNotificationPermission()) {
+          // Example: Notify every 60 minutes (for demo, use 10 seconds)
+          setInterval(() => {
+            new Notification("🚻 PeePal Reminder", {
+              body: "Time to take a pee break! 💧",
+              icon: "https://emoji.gg/assets/emoji/7192_toilet.png"
+            });
+          }, 10 * 1000); // change to 60 * 60 * 1000 for 1 hour
+        }
+      });
+    </script>
+  </body>
+</html>
