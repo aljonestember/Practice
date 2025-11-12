@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,20 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aljonestember/Practice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aljonestember/Practice/issues"
+  },
+  "homepage": "https://github.com/aljonestember/Practice#readme"
 }
